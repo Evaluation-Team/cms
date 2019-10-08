@@ -1,0 +1,7 @@
+{% load wagtailcore_tags %}
+
+<ul class="govuk-list">
+    {% for li in block.value %}
+        <li>{{ li }}</li>
+    {% endfor %}
+</ul>

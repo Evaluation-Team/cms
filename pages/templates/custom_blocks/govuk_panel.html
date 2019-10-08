@@ -1,0 +1,16 @@
+{% load wagtailcore_tags %}
+
+{% spaceless %}
+    <div class="govuk-panel govuk-panel--confirmation">
+        {% with item=block.value %}
+            {% if item.title %}
+                <h1 class="govuk-panel__title">
+                    {{ item.title }}
+                </h1>
+            {% endif %}
+            <div class="govuk-panel__body">
+                {{ item.body }}
+            </div>
+        {% endwith %}
+    </div>
+{% endspaceless %}

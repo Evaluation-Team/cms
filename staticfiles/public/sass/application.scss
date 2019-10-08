@@ -1,0 +1,49 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import "../../../lib/extensions/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/step-by-step-navigation";
+@import "patterns/task-list";
+@import "patterns/related-items";
+
+// Components that aren't in Frontend
+@import "components/cookie-banner";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+
+.selected-menu::before {
+  content: '';
+  position: absolute;
+  z-index: 5;
+  background-color: #1d70b8;
+  box-sizing: border-box;
+  width: 10px;
+  height: 5px;
+  margin-left: -15px;
+  margin-top: 12px;
+}
+
+.menu-vertical-line
+{border-left: 5px solid #BBBDBF;
+  padding-left: 15px;
+}
+
+.menu-vertical-line-blue
+{border-left: 5px solid #1d70b8;
+  padding-left: 15px;
+}
+
+.filter-results-box
+{
+  background-color: lightgrey;
+  padding: 20px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,19 @@
+/* Error: expected ";".
+ *    ,
+ * 17 |   @include govuk-font(16, $weight: bold)
+ *    |                                         ^
+ *    '
+ *   patterns/_step-by-step-navigation.scss 17:41  @import
+ *   application.scss 11:9                         @import
+ *   application-ie8.scss 3:9                      root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: expected ";".\a    \2577 \a 17 \2502    @include govuk-font(16, $weight: bold)\a    \2502                                          ^\a    \2575 \a   patterns/_step-by-step-navigation.scss 17:41  @import\a   application.scss 11:9                         @import\a   application-ie8.scss 3:9                      root stylesheet';
+}

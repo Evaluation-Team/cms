@@ -1,0 +1,21 @@
+{% load menu_tags %}
+
+{% if menu_items %}
+    <div class="app-pane__subnav">
+        <nav class="app-subnav">
+            <ul class="app-subnav__section">
+            {% for item in menu_items %}
+                    <li class="app-subnav__section-item">
+                        <a class="govuk-link govuk-link--no-visited-state" href="{{ item.href }}">{{ item.text }}</a>
+                    </li>
+        {#	    <li class="{{ item.active_class }}{% if item.has_children_in_menu %} dropdown{% endif %}">#}
+        {#	        <a href="{{ item.href }}"{% if item.has_children_in_menu %} class="dropdown-toggle" id="ddtoggle_{{ item.pk }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"{% endif %}>{{ item.text }}{% if item.has_children_in_menu %} <span class="caret"></span>{% endif %}</a>#}
+        {#	        {% if item.has_children_in_menu %}#}
+        {#	            {% sub_menu item template=current_template %}#}
+        {#	        {% endif %}#}
+        {#	    </li>#}
+            {% endfor %}
+            </ul>
+        </nav>
+    </div>
+{% endif %}

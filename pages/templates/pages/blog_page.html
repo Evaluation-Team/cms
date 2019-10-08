@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags menu_tags %}
+
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-xl">{{ page.title }}</h1>
+
+    {#    <a class="govuk-back-link" href="{{ page.get_parent.url }}">Back</a>#}
+
+    <div class="intro">{{ page.intro }}</div>
+{#{% include_block page.body %}#}
+{#    {{ page.body }}#}
+    {% for block in page.body %}
+{#        {% if block.block_type == 'heading' %}#}
+{#            <h1 class="govuk-heading-xl">{{ block.value }}</h1>#}
+{#        {% elif block.block_type == 'h2' %}#}
+{#            <h2 class="govuk-heading-l">{{ block.value }}</h2>#}
+{#        {% elif block.block_type == 'h3' %}#}
+{#            <h3 class="govuk-heading-m">{{ block.value }}</h3>#}
+{#        {% elif block.block_type == 'h4' %}#}
+{#            <h3 class="govuk-heading-s">{{ block.value }}</h3>#}
+{#        {% else %}#}
+{#            <section class="block-{{ block.block_type }}">#}
+                {% include_block block %}
+{#            </section>#}
+{#        {% endif %}#}
+    {% endfor %}
+
+    <p class="meta">Published {{ page.date }}</p>
+
+{% endblock %}
+
+{#{% block side_menu %}#}
+{#    <ul class="nav navbar-nav">#}
+{#    {{ menu }}#}
+{#    {{ self.get_children }}#}
+{##}
+{#    {% for menu in menuitems %}#}
+{#        <li>#}
+{#            <a href="{{menu.url}}">{{menu.title}}</a>#}
+{#        </li>#}
+{#    {% endfor %}#}
+{#</ul>#}
+{#{% endblock %}#}
